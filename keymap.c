@@ -18,14 +18,14 @@ typedef struct {
 // enum { SINGLE_TAP = 1, SINGLE_HOLD = 2, DOUBLE_TAP = 3, DOUBLE_HOLD = 4, TRIPLE_TAP = 5 };
 // Key tap states
 enum {
-    SINGLE_TAP = 1,
-    SINGLE_HOLD = 2,
+    SINGLE_TAP        = 1,
+    SINGLE_HOLD       = 2,
     SINGLE_DOUBLE_TAP = 3,
-    DOUBLE_TAP = 4,
-    DOUBLE_HOLD = 5,
+    DOUBLE_TAP        = 4,
+    DOUBLE_HOLD       = 5,
     DOUBLE_SINGLE_TAP = 6,  // Send two single taps
-    TRIPLE_TAP = 7,
-    TRIPLE_HOLD = 8,
+    TRIPLE_TAP        = 7,
+    TRIPLE_HOLD       = 8,
 };
 
 // Tap dance enums
