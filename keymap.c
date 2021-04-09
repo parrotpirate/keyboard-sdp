@@ -469,7 +469,7 @@ void lgui_reset(qk_tap_dance_state_t *state, void *user_data) {
 }
 
 void td_rgui_finished(qk_tap_dance_state_t *state, void *user_data) {
-    td_rgui_state.state = cur_dance(state);
+    td_rgui_state.state = cur_dance_interrupt(state);
     switch (td_rgui_state.state) {
         case SINGLE_TAP:
             register_code(KC_QUOTE);
@@ -477,16 +477,18 @@ void td_rgui_finished(qk_tap_dance_state_t *state, void *user_data) {
         case SINGLE_HOLD:
             register_code(KC_RGUI);
             break;
-        // case SINGLE_DOUBLE_TAP:
-        //     set_oneshot_mods(MOD_BIT(KC_LGUI));
-        //     register_code(KC_QUOTE);
-        //     break;
+        case SINGLE_DOUBLE_TAP:
+            register_code(KC_QUOTE);
+            break;
         case DOUBLE_TAP:
             register_code(KC_LSFT);
             register_code(KC_QUOTE);
             unregister_code(KC_LSFT);
             break;
         case DOUBLE_HOLD:
+            register_code(KC_RGUI);
+            break;
+        case DOUBLE_SINGLE_TAP:
             register_code(KC_RGUI);
             break;
     }
@@ -500,15 +502,17 @@ void td_rgui_reset(qk_tap_dance_state_t *state, void *user_data) {
         case SINGLE_HOLD:
             unregister_code(KC_RGUI);
             break;
-        // case SINGLE_DOUBLE_TAP:
-        //     clear_oneshot_mods();
-        //     unregister_code(KC_QUOTE);
-        //     break;
+        case SINGLE_DOUBLE_TAP:
+            unregister_code(KC_QUOTE);
+            break;
         case DOUBLE_TAP:
             unregister_code(KC_LSFT);
             unregister_code(KC_QUOTE);
             break;
         case DOUBLE_HOLD:
+            unregister_code(KC_RGUI);
+            break;
+        case DOUBLE_SINGLE_TAP:
             unregister_code(KC_RGUI);
             break;
     }
