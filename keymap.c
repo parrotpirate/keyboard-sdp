@@ -841,7 +841,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     [TD_RSHIFT]     = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, td_rshift_finished, td_rshift_reset, 200),
     [TD_COLON]      = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, td_colon_finished, td_colon_reset, 200),
     [TD_LGUI]       = ACTION_TAP_DANCE_FN_ADVANCED(NULL, lgui_finished, lgui_reset),
-    [TD_RGUI]       = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, td_rgui_finished, td_rgui_reset, 200),
+    [TD_RGUI]       = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, td_rgui_finished, td_rgui_reset, 150),
     [LCTRL_TD]      = ACTION_TAP_DANCE_FN_ADVANCED(NULL, z_td_finished, z_td_reset),
     [RCTRL_TD]      = ACTION_TAP_DANCE_FN_ADVANCED(NULL, q_td_finished, q_td_reset),
     [CAPS_TD]       = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, caps_finished, caps_reset, 200),
@@ -849,7 +849,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     [CT_FLSH]       = ACTION_TAP_DANCE_FN_ADVANCED_TIME(dance_flsh_each, dance_flsh_finished, dance_flsh_reset, 300),
     [TD_MIN_EQ]     = ACTION_TAP_DANCE_DOUBLE(KC_MINUS, KC_EQUAL),
     [TD_DBL_SLS]    = ACTION_TAP_DANCE_DOUBLE(KC_SLASH, KC_BSLASH),
-    [TD_J_ESC]      = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, td_j_esc_finished, td_j_esc_reset, 150),
+    [TD_J_ESC]      = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, td_j_esc_finished, td_j_esc_reset, 175),
     [TD_ALFRED_CAT] = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, td_alfred_cat_finished, td_alfred_cat_reset, 200),
 };
 // end tap dance keycode config
