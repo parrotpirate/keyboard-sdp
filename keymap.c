@@ -26,10 +26,11 @@ enum {
     DOUBLE_SINGLE_TAP = 6,  // Send two single taps
     TRIPLE_TAP        = 7,
     TRIPLE_HOLD       = 8,
+    MORE_TAPS
 };
 
 // Tap dance enums
-enum { TD_LSHIFT, TD_RSHIFT, TD_COLON, TD_LGUI, TD_RGUI, CT_FLSH, CAPS_TD, LCTRL_TD, RCTRL_TD, ESC_TD, TD_MIN_EQ, TD_DBL_SLS, TD_J_ESC, TD_ALFRED_CAT };
+enum { TD_LSHIFT, TD_RSHIFT, TD_COLON, TD_LGUI, TD_RGUI, CT_FLSH, CAPS_TD, LCTRL_TD, RCTRL_TD, ESC_TD, TD_MIN_EQ, TD_DBL_SLS, TD_J_ESC, TD_ALFRED_CAT, DANCE_0 };
 
 int cur_dance(qk_tap_dance_state_t *state);
 
@@ -77,7 +78,7 @@ enum custom_keycodes {
 // #include "dynamic_macro.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [0]    = LAYOUT_ergodox_pretty(KC_EQUAL, KC_1, KC_2, KC_3, KC_4, KC_5, DYN_MACRO_PLAY1, TD(CT_FLSH), KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINUS, KC_DELETE, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_TRANSPARENT, MO(_DYN), KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSLASH, TD(CAPS_TD), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, TD(TD_J_ESC), KC_K, KC_L, TD(TD_COLON), MT(MOD_RGUI, KC_QUOTE), TD(TD_LSHIFT), MT(MOD_LCTL, KC_Z), KC_X, KC_C, KC_V, KC_B, KC_HYPR, KC_MEH, KC_N, KC_M, KC_COMMA, KC_DOT, MT(MOD_RCTL, KC_SLASH), TD(TD_RSHIFT), LCTL(KC_LBRACKET), KC_LALT, LCTL(KC_LALT), KC_LEFT, KC_RIGHT, KC_UP, KC_DOWN, KC_LBRACKET, KC_RBRACKET, DYN_REC_STOP, LALT_T(KC_APPLICATION), KC_HOME, KC_PGUP, RALT(KC_RGUI), KC_END, KC_PGDOWN, LT(1, KC_SPACE), KC_BSPACE, SCMD_T(KC_NO), LALT_T(KC_ESCAPE), KC_TAB, LT(1, KC_ENTER)),
+    [0]    = LAYOUT_ergodox_pretty(KC_EQUAL, KC_1, KC_2, KC_3, KC_4, KC_5, DYN_MACRO_PLAY1, TD(CT_FLSH), KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINUS, KC_DELETE, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_TRANSPARENT, MO(_DYN), KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSLASH, TD(CAPS_TD), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, TD(TD_J_ESC), KC_K, KC_L, TD(TD_COLON), TD(DANCE_0), KC_QUOTE), TD(TD_LSHIFT), MT(MOD_LCTL, KC_Z), KC_X, KC_C, KC_V, KC_B, KC_HYPR, KC_MEH, KC_N, KC_M, KC_COMMA, KC_DOT, MT(MOD_RCTL, KC_SLASH), TD(TD_RSHIFT), LCTL(KC_LBRACKET), KC_LALT, LCTL(KC_LALT), KC_LEFT, KC_RIGHT, KC_UP, KC_DOWN, KC_LBRACKET, KC_RBRACKET, DYN_REC_STOP, LALT_T(KC_APPLICATION), KC_HOME, KC_PGUP, RALT(KC_RGUI), KC_END, KC_PGDOWN, LT(1, KC_SPACE), KC_BSPACE, SCMD_T(KC_NO), LALT_T(KC_ESCAPE), KC_TAB, LT(1, KC_ENTER)),
     [1]    = LAYOUT_ergodox_pretty(KC_ESCAPE, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, LGUI(KC_GRAVE), LGUI(KC_TAB), KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_TRANSPARENT, KC_EXLM, KC_AT, KC_LCBR, KC_RCBR, KC_PIPE, KC_TRANSPARENT, KC_TRANSPARENT, KC_UP, KC_7, KC_8, KC_9, KC_ASTR, KC_F12, RGUI_T(KC_NO), KC_HASH, KC_DLR, KC_LPRN, KC_RPRN, KC_UNDS, KC_COLN, KC_4, KC_5, KC_6, KC_KP_PLUS, KC_TRANSPARENT, MC_SGL_ARW, KC_PERC, KC_CIRC, KC_LBRACKET, KC_RBRACKET, TD(TD_MIN_EQ), KC_TILDE, MO(_DYN), KC_AMPR, KC_1, KC_2, KC_3, TD(TD_DBL_SLS), MC_DBL_ARW, KC_TRANSPARENT, KC_AMPR, KC_UNDS, KC_LABK, KC_RABK, KC_KP_0, KC_MINUS, KC_DOT, KC_EQUAL, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LGUI(KC_Z), LGUI(KC_X), LGUI(KC_SPACE), LCTL(KC_LBRACKET), LGUI(KC_V), LGUI(KC_C), LALT(LCTL(LGUI(KC_SPACE))), KC_SPACE),
     [2]    = LAYOUT_ergodox_pretty(KC_TRANSPARENT, KC_TRANSPARENT, KC_MS_BTN3, KC_F3, KC_MS_ACCEL0, KC_MS_ACCEL1, KC_MS_ACCEL2, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_MS_WH_UP, KC_MS_UP, KC_MS_WH_DOWN, KC_TRANSPARENT, KC_TRANSPARENT, TO(1), KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_LBRACKET), KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, LALT(KC_UP), KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, KC_TRANSPARENT, KC_TRANSPARENT, KC_LSHIFT, KC_TRANSPARENT, KC_MS_WH_LEFT, MEH(KC_C), KC_MS_WH_RIGHT, LALT(KC_DOWN), TG(4), TO(0), KC_TRANSPARENT, KC_MEDIA_PLAY_PAUSE, KC_MEDIA_PREV_TRACK, KC_MEDIA_NEXT_TRACK, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LALT(KC_LEFT), LALT(KC_RIGHT), KC_AUDIO_VOL_UP, KC_AUDIO_VOL_DOWN, KC_AUDIO_MUTE, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LEFTCLICK, KC_MS_BTN2, DRAGLOCK, KC_TRANSPARENT, LALT(LCTL(LGUI(KC_SPACE))), TD(TD_ALFRED_CAT)),
@@ -831,6 +832,61 @@ void td_alfred_cat_reset(qk_tap_dance_state_t *state, void *user_data) {
     td_alfred_cat_state.state = 0;
 }
 
+// *START EZ TAP DANCE*
+static tap dance_state[1];
+
+int dance_step(qk_tap_dance_state_t *state);
+
+int dance_step(qk_tap_dance_state_t *state) {
+    if (state->count == 1) {
+        if (state->interrupted || !state->pressed) return SINGLE_TAP;
+        else return SINGLE_HOLD;
+    } else if (state->count == 2) {
+        if (state->interrupted) return DOUBLE_SINGLE_TAP;
+        else if (state->pressed) return DOUBLE_HOLD;
+        else return DOUBLE_TAP;
+    }
+    return MORE_TAPS;
+}
+
+
+void on_dance_0(qk_tap_dance_state_t *state, void *user_data);
+void dance_0_finished(qk_tap_dance_state_t *state, void *user_data);
+void dance_0_reset(qk_tap_dance_state_t *state, void *user_data);
+
+void on_dance_0(qk_tap_dance_state_t *state, void *user_data) {
+    if(state->count == 3) {
+        tap_code16(KC_QUOTE);
+        tap_code16(KC_QUOTE);
+        tap_code16(KC_QUOTE);
+    }
+    if(state->count > 3) {
+        tap_code16(KC_QUOTE);
+    }
+}
+
+void dance_0_finished(qk_tap_dance_state_t *state, void *user_data) {
+    dance_state[0].step = dance_step(state);
+    switch (dance_state[0].step) {
+        case SINGLE_TAP: register_code16(KC_QUOTE); break;
+        case SINGLE_HOLD: register_code16(KC_LGUI); break;
+        case DOUBLE_TAP: register_code16(RSFT(KC_QUOTE)); break;
+        case DOUBLE_SINGLE_TAP: tap_code16(KC_QUOTE); register_code16(KC_QUOTE);
+    }
+}
+
+void dance_0_reset(qk_tap_dance_state_t *state, void *user_data) {
+    wait_ms(10);
+    switch (dance_state[0].step) {
+        case SINGLE_TAP: unregister_code16(KC_QUOTE); break;
+        case SINGLE_HOLD: unregister_code16(KC_LGUI); break;
+        case DOUBLE_TAP: unregister_code16(RSFT(KC_QUOTE)); break;
+        case DOUBLE_SINGLE_TAP: unregister_code16(KC_QUOTE); break;
+    }
+    dance_state[0].step = 0;
+}
+// !END EZ TAP DANCE!
+
 // tap dance keycode config
 qk_tap_dance_action_t tap_dance_actions[] = {
     [TD_LSHIFT]     = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, td_lshift_finished, td_lshift_reset, 200),
@@ -847,5 +903,6 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     [TD_DBL_SLS]    = ACTION_TAP_DANCE_DOUBLE(KC_SLASH, KC_BSLASH),
     [TD_J_ESC]      = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, td_j_esc_finished, td_j_esc_reset, 150),
     [TD_ALFRED_CAT] = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, td_alfred_cat_finished, td_alfred_cat_reset, 200),
+    [DANCE_0] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_0, dance_0_finished, dance_0_reset),
 };
 // end tap dance keycode config
