@@ -845,3 +845,8 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     [TD_ALFRED_CAT] = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, td_alfred_cat_finished, td_alfred_cat_reset, 200),
 };
 // end tap dance keycode config
+
+// KEY SEQUENCES
+const uint16_t PROGMEM test_combo[] = {KC_A, KC_B, COMBO_END};
+combo_t key_combos[COMBO_COUNT] = {COMBO(test_combo, KC_ESC)};
+// END KEY SEQUENCES
