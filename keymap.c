@@ -77,7 +77,7 @@ enum custom_keycodes {
 // #include "dynamic_macro.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [0]    = LAYOUT_ergodox_pretty(KC_EQUAL, KC_1, KC_2, KC_3, KC_4, KC_5, DYN_MACRO_PLAY1, TD(CT_FLSH), KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINUS, KC_DELETE, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_TRANSPARENT, MO(_DYN), KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSLASH, TD(CAPS_TD), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, TD(TD_J_ESC), KC_K, KC_L, TD(TD_COLON), MT(MOD_RGUI, KC_QUOTE), TD(TD_LSHIFT), MT(MOD_LCTL, KC_Z), KC_X, KC_C, KC_V, KC_B, KC_HYPR, KC_MEH, KC_N, KC_M, KC_COMMA, KC_DOT, MT(MOD_RCTL, KC_SLASH), TD(TD_RSHIFT), LCTL(KC_LBRACKET), KC_LALT, LCTL(KC_LALT), KC_LEFT, KC_RIGHT, KC_UP, KC_DOWN, KC_LBRACKET, KC_RBRACKET, DYN_REC_STOP, LALT_T(KC_APPLICATION), KC_HOME, KC_PGUP, RALT(KC_RGUI), KC_END, KC_PGDOWN, LT(1, KC_SPACE), KC_BSPACE, SCMD_T(KC_NO), LALT_T(KC_ESCAPE), KC_TAB, LT(1, KC_ENTER)),
+    [0]    = LAYOUT_ergodox_pretty(KC_EQUAL, KC_1, KC_2, KC_3, KC_4, KC_5, DYN_MACRO_PLAY1, TD(CT_FLSH), KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINUS, KC_DELETE, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_TRANSPARENT, MO(_DYN), KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSLASH, TD(CAPS_TD), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, TD(TD_J_ESC), KC_K, KC_L, TD(TD_COLON), TD(TD_RGUI), TD(TD_LSHIFT), MT(MOD_LCTL, KC_Z), KC_X, KC_C, KC_V, KC_B, KC_HYPR, KC_MEH, KC_N, KC_M, KC_COMMA, KC_DOT, MT(MOD_RCTL, KC_SLASH), TD(TD_RSHIFT), LCTL(KC_LBRACKET), KC_LALT, LCTL(KC_LALT), KC_LEFT, KC_RIGHT, KC_UP, KC_DOWN, KC_LBRACKET, KC_RBRACKET, DYN_REC_STOP, LALT_T(KC_APPLICATION), KC_HOME, KC_PGUP, RALT(KC_RGUI), KC_END, KC_PGDOWN, LT(1, KC_SPACE), KC_BSPACE, SCMD_T(KC_NO), LALT_T(KC_ESCAPE), KC_TAB, LT(1, KC_ENTER)),
     [1]    = LAYOUT_ergodox_pretty(KC_ESCAPE, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, LGUI(KC_GRAVE), LGUI(KC_TAB), KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_TRANSPARENT, KC_EXLM, KC_AT, KC_LCBR, KC_RCBR, KC_PIPE, KC_TRANSPARENT, KC_TRANSPARENT, KC_UP, KC_7, KC_8, KC_9, KC_ASTR, KC_F12, RGUI_T(KC_NO), KC_HASH, KC_DLR, KC_LPRN, KC_RPRN, KC_UNDS, KC_COLN, KC_4, KC_5, KC_6, KC_KP_PLUS, KC_TRANSPARENT, MC_SGL_ARW, KC_PERC, KC_CIRC, KC_LBRACKET, KC_RBRACKET, TD(TD_MIN_EQ), KC_TILDE, MO(_DYN), KC_AMPR, KC_1, KC_2, KC_3, TD(TD_DBL_SLS), MC_DBL_ARW, KC_TRANSPARENT, KC_AMPR, KC_UNDS, KC_LABK, KC_RABK, KC_KP_0, KC_MINUS, KC_DOT, KC_EQUAL, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LGUI(KC_Z), LGUI(KC_X), LGUI(KC_SPACE), LCTL(KC_LBRACKET), LGUI(KC_V), LGUI(KC_C), LALT(LCTL(LGUI(KC_SPACE))), KC_SPACE),
     [2]    = LAYOUT_ergodox_pretty(KC_TRANSPARENT, KC_TRANSPARENT, KC_MS_BTN3, KC_F3, KC_MS_ACCEL0, KC_MS_ACCEL1, KC_MS_ACCEL2, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_MS_WH_UP, KC_MS_UP, KC_MS_WH_DOWN, KC_TRANSPARENT, KC_TRANSPARENT, TO(1), KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_LBRACKET), KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, LALT(KC_UP), KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, KC_TRANSPARENT, KC_TRANSPARENT, KC_LSHIFT, KC_TRANSPARENT, KC_MS_WH_LEFT, MEH(KC_C), KC_MS_WH_RIGHT, LALT(KC_DOWN), TG(4), TO(0), KC_TRANSPARENT, KC_MEDIA_PLAY_PAUSE, KC_MEDIA_PREV_TRACK, KC_MEDIA_NEXT_TRACK, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LALT(KC_LEFT), LALT(KC_RIGHT), KC_AUDIO_VOL_UP, KC_AUDIO_VOL_DOWN, KC_AUDIO_MUTE, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LEFTCLICK, KC_MS_BTN2, DRAGLOCK, KC_TRANSPARENT, LALT(LCTL(LGUI(KC_SPACE))), TD(TD_ALFRED_CAT)),
@@ -477,17 +477,15 @@ void td_rgui_finished(qk_tap_dance_state_t *state, void *user_data) {
         case SINGLE_HOLD:
             register_code(KC_RGUI);
             break;
-        // case SINGLE_DOUBLE_TAP:
-        //     set_oneshot_mods(MOD_BIT(KC_LGUI));
-        //     register_code(KC_QUOTE);
-        //     break;
         case DOUBLE_TAP:
-            register_code(KC_LSFT);
-            register_code(KC_QUOTE);
-            unregister_code(KC_LSFT);
+            register_code16(RSFT(KC_QUOTE));
             break;
         case DOUBLE_HOLD:
             register_code(KC_RGUI);
+            break;
+        case DOUBLE_SINGLE_TAP:
+            tap_code16(KC_QUOTE);
+            register_code16(KC_QUOTE);
             break;
     }
 }
@@ -500,16 +498,14 @@ void td_rgui_reset(qk_tap_dance_state_t *state, void *user_data) {
         case SINGLE_HOLD:
             unregister_code(KC_RGUI);
             break;
-        // case SINGLE_DOUBLE_TAP:
-        //     clear_oneshot_mods();
-        //     unregister_code(KC_QUOTE);
-        //     break;
         case DOUBLE_TAP:
-            unregister_code(KC_LSFT);
-            unregister_code(KC_QUOTE);
+            unregister_code16(RSFT(KC_QUOTE));
             break;
         case DOUBLE_HOLD:
             unregister_code(KC_RGUI);
+            break;
+        case DOUBLE_SINGLE_TAP:
+            unregister_code16(KC_QUOTE);
             break;
     }
     td_rgui_state.state = 0;
@@ -837,7 +833,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     [TD_RSHIFT]     = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, td_rshift_finished, td_rshift_reset, 200),
     [TD_COLON]      = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, td_colon_finished, td_colon_reset, 200),
     [TD_LGUI]       = ACTION_TAP_DANCE_FN_ADVANCED(NULL, lgui_finished, lgui_reset),
-    [TD_RGUI]       = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, td_rgui_finished, td_rgui_reset, 175),
+    [TD_RGUI]       = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, td_rgui_finished, td_rgui_reset, 150),
     [LCTRL_TD]      = ACTION_TAP_DANCE_FN_ADVANCED(NULL, z_td_finished, z_td_reset),
     [RCTRL_TD]      = ACTION_TAP_DANCE_FN_ADVANCED(NULL, q_td_finished, q_td_reset),
     [CAPS_TD]       = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, caps_finished, caps_reset, 200),
@@ -845,7 +841,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     [CT_FLSH]       = ACTION_TAP_DANCE_FN_ADVANCED_TIME(dance_flsh_each, dance_flsh_finished, dance_flsh_reset, 300),
     [TD_MIN_EQ]     = ACTION_TAP_DANCE_DOUBLE(KC_MINUS, KC_EQUAL),
     [TD_DBL_SLS]    = ACTION_TAP_DANCE_DOUBLE(KC_SLASH, KC_BSLASH),
-    [TD_J_ESC]      = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, td_j_esc_finished, td_j_esc_reset, 150),
+    [TD_J_ESC]      = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, td_j_esc_finished, td_j_esc_reset, 175),
     [TD_ALFRED_CAT] = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, td_alfred_cat_finished, td_alfred_cat_reset, 200),
 };
 // end tap dance keycode config
