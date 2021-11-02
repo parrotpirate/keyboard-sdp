@@ -27,4 +27,6 @@
 #undef DEBOUNCE_DELAY
 #define DEBOUNCE_DELAY 5
 
+#define COMBO_COUNT 1
+
 // #define DYNAMIC_MACRO_USER_CALL
